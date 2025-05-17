@@ -1,0 +1,243 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chumki's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    /* Glowing Grid Background */
+    .grid-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;  /* Allow interactions with content */
+      z-index: -1;  /* Place behind all content */
+    }
+
+    .plane {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .grid {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to right, #0f0f0f 1px, transparent 1px),
+                        linear-gradient(to bottom, #0f0f0f 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.3;
+    }
+
+    .glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to right, #00f 1px, transparent 1px),
+                        linear-gradient(to bottom, #00f 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: glowAnimation 1.5s infinite alternate;
+      opacity: 0.6;
+    }
+
+    @keyframes glowAnimation {
+      0% {
+        opacity: 0.5;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+
+    /* Main Content Styling */
+    header {
+      background-color: #333;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    nav {
+      background-color: #444;
+      padding: 1rem;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      margin-top: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      color: #222;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill {
+      background-color: #e0e0e0;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .project {
+      background-color: #fafafa;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    a {
+      color: #0077cc;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+      margin-top: 2rem;
+      z-index: 1;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <!-- Glowing Grid Background -->
+  <div class="grid-container">
+    <div class="plane">
+      <div class="grid"></div>
+      <div class="glow"></div>
+    </div>
+    <div class="plane">
+      <div class="grid"></div>
+      <div class="glow"></div>
+    </div>
+  </div>
+
+  <!-- Main Content (Your Portfolio) -->
+  <header>
+    <h1>Chumki</h1>
+    <p>Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Chumki, a dedicated and results-driven Full Stack Developer with a passion for crafting intuitive user experiences and building scalable backend systems. I have experience developing dynamic web applications using modern frameworks and enjoy turning complex problems into elegant solutions.</p>
+    <p>I thrive in collaborative environments where learning and innovation are encouraged. Whether it's designing responsive UI components or optimizing server performance, I bring a detail-oriented approach to every project I undertake.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">HTML5 & CSS3</div>
+      <div class="skill">JavaScript (ES6+)</div>
+      <div class="skill">React.js & Redux</div>
+      <div class="skill">Node.js & Express</div>
+      <div class="skill">MongoDB & Mongoose</div>
+      <div class="skill">RESTful APIs</div>
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">Figma & UI/UX Design</div>
+      <div class="skill">Agile & Scrum</div>
+      <div class="skill">Testing (Jest, Mocha)</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>A clean and responsive personal portfolio to showcase my work and skills.</p>
+      </div>
+      <div class="project">
+        <h3>Task Manager</h3>
+        <p>Full-stack app to manage daily tasks with user authentication and database support.</p>
+      </div>
+      <div class="project">
+        <h3>Weather App</h3>
+        <p>Fetches real-time weather data using OpenWeatherMap API and displays it beautifully.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>If you'd like to get in touch, feel free to email me at <a href="mailto:chumki@example.com">chumki@example.com</a> or connect with me on <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Chumki. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
